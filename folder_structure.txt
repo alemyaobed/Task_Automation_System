@@ -71,4 +71,3 @@ Task_Automation_System/
 
 - **`manage.py`**: Utility script to manage and run various tasks (e.g., running Fabric commands).
 
-This structure provides a clear separation of concerns and should help you manage and scale your project effectively. If you need specific configurations or more detailed examples for any part, let me know!
