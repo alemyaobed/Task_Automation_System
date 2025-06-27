@@ -74,3 +74,91 @@ Feature	Implementation Idea
 - Multiple notes	Use tk.Toplevel() or launch multiple windows
 - Tray icon	Use pystray to hide/show from the system tray
 - Hotkeys	Use keyboard or pynput to add global shortcuts
+
+
+
+# ✅ Recommended Folder Structure for a Python Sticky Notes App
+Here’s a clean and modular layout:
+
+bash
+```
+sticky_notes_app/
+├── main.py                 # Entry point of the app
+├── notes/
+│   ├── __init__.py
+│   ├── note_window.py      # GUI logic for individual note windows
+│   └── note_manager.py     # Handles multiple notes, saving/loading, etc.
+├── storage/
+│   ├── __init__.py
+│   └── file_storage.py     # Save/load note content to/from disk
+├── ui/
+│   ├── __init__.py
+│   └── theme.py            # Optional: define color themes, fonts, styles
+├── assets/
+│   ├── icon.ico            # Icon for the app/tray (if any)
+│   └── styles.css          # (If using ttkbootstrap or themed widgets)
+├── config/
+│   └── settings.json       # User settings (e.g., always-on-top default)
+├── requirements.txt        # For dependencies
+└── README.md               # Project description
+```
+
+## 📌 Breakdown by Module
+### main.py
+- Initializes the app
+- Loads settings
+- Launches the first note or manager
+
+### notes/note_window.py
+- Handles creation of a single sticky note window
+- Manages attributes like always-on-top, drag, resize, close
+
+### notes/note_manager.py
+- Manages a list of notes
+- Can be used to open, close, or restore multiple notes
+
+### storage/file_storage.py
+- Save content to disk (e.g., ~/.sticky_notes/note_1.txt)
+- Load previously saved notes
+- Optionally autosave on close
+
+### ui/theme.py
+- Centralized styling (colors, fonts, default sizes)
+- Optional support for light/dark modes
+
+### config/settings.json
+- Stores persistent app preferences (e.g., transparency, always-on-top toggle)
+
+### assets/icon.ico
+- Icon used for the tray (if you use pystray) or window
+
+## ✅ Tools & Libraries You Might Use
+
+| Purpose        | Library             |
+|----------------|---------------------|
+| GUI            | `tkinter`           |
+| Tray icon      | `pystray`           |
+| Hotkeys        | `keyboard`, `pynput`|
+| Save/load JSON | `json` module       |
+| Packaging      | `pyinstaller`       |
+
+
+✅ Example Launch Flow
+python
+```
+# main.py
+
+from notes.note_manager import NoteManager
+
+if __name__ == "__main__":
+    manager = NoteManager()
+    manager.launch()
+```
+
+## 📦 When You're Ready to Package
+Once it's working, you can create a build/ or dist/ folder using:
+
+bash
+```
+pyinstaller --onefile --icon=assets/icon.ico main.py
+```
