@@ -1,4 +1,9 @@
-# ✅ Goal: Build a Sticky Notes App That Always Stays on Top (Python-Based)
+# 🗒️ SNATAS – The Sticky Notes App That Always Stays-On-Top
+SNATAS is a lightweight, distraction-free sticky notes app built in Python that always stays on top of other windows. Perfect
+for quick reminders, todos, or copy-paste workflows without losing focus.
+
+
+## ✅ Goal: Build a Sticky Notes App That Always Stays on Top (Python-Based)
 🎯 Problem
 Windows Sticky Notes does not support “always-on-top,” making it inconvenient for multitasking or persistent visibility.
 
