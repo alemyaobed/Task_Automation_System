@@ -5,7 +5,7 @@ Run the Sticky Notes MVP:
 - Python 3.8+ required
 - Launch:
 
-python -m sticky_notes_app
+python -m app
 
 Shortcuts:
 - Ctrl+N new note

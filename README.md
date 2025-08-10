@@ -87,7 +87,7 @@ Here’s a clean and modular layout:
 
 bash
 ```
-sticky_notes_app/
+app/
 ├── main.py                 # Entry point of the app
 ├── notes/
 │   ├── __init__.py

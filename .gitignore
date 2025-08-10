@@ -4,8 +4,8 @@ __pycache__/
 *.pyd
 .env
 .env.*
-.venv/
+venv/
 build/
-dist/
+# dist/
 *.spec
 .snatas/
