@@ -1,0 +1,13 @@
+[project]
+name = "snatas"
+version = "0.1.0"
+description = "SNATAS - Sticky Notes App That Always Stays-On-Top"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = []
+
+[tool.setuptools]
+py-modules = []
+
+[tool.pyproject-fmt]
+max_supported_python = "3.12"

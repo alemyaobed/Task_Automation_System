@@ -1,0 +1,2 @@
+# Minimal requirements for SNATAS MVP
+# Tkinter ships with Python on most platforms; no external deps needed for MVP.
