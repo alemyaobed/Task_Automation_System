@@ -1,5 +1,9 @@
+from pathlib import Path
+import sys
 import tkinter as tk
 from typing import Callable, Optional
+
+from app.constants.constants import APP_NAME
 
 
 class NoteWindow:
@@ -9,7 +13,7 @@ class NoteWindow:
 
     def __init__(
         self,
-        title: str = "Sticky Note",
+        title: str = APP_NAME,
         width: int = 300,
         height: int = 200,
         x: int = 100,
@@ -23,6 +27,17 @@ class NoteWindow:
         alpha: float = 1.0,
     ) -> None:
         self.root = tk.Toplevel()
+        
+        icon_path = Path(__file__).parent.parent / "assets" / "snatas.ico"
+        if getattr(sys, 'frozen', False):
+            # Running as a bundled executable
+            icon_path = Path(sys._MEIPASS) / "app" / "assets" / "snatas.ico"
+
+        try:
+            self.root.iconbitmap(default=str(icon_path))
+        except Exception as e:
+            print(f"Failed to load icon: {e}")
+        
         self.root.title(title)
         self.root.geometry(f"{width}x{height}+{x}+{y}")
         self.root.attributes("-topmost", topmost)

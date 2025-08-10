@@ -1,9 +1,10 @@
 import tkinter as tk
 from typing import List
 
-from .note_window import NoteWindow
-from ..storage.file_storage import FileStorage
-from ..ui.theme import DEFAULT_THEME
+from app.constants.constants import APP_NAME
+from app.notes.note_window import NoteWindow
+from app.storage.file_storage import FileStorage
+from app.ui.theme import DEFAULT_THEME
 
 
 class NoteManager:
@@ -39,7 +40,7 @@ class NoteManager:
         x_offset = 100 + len(self.notes) * 30
         y_offset = 100 + len(self.notes) * 30
         note = NoteWindow(
-            title="Sticky Note",
+            title=APP_NAME,
             width=self.settings.get("width", DEFAULT_THEME["width"]),
             height=self.settings.get("height", DEFAULT_THEME["height"]),
             x=x_offset,

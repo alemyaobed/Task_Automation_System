@@ -165,5 +165,5 @@ Once it's working, you can create a build/ or dist/ folder using:
 
 bash
 ```
-pyinstaller --onefile --icon=assets/icon.ico main.py
+pyinstaller --onefile --noconsole --name SNATAS --icon=app/assets/snatas.ico --add-data "app/assets/snatas.ico;app/assets" app/main.py
 ```

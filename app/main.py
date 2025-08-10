@@ -3,7 +3,7 @@ SNATAS MVP entry point.
 
 Launches a minimal always-on-top sticky notes app using Tkinter.
 """
-from .notes.note_manager import NoteManager
+from app.notes.note_manager import NoteManager
 
 
 def main() -> None:
