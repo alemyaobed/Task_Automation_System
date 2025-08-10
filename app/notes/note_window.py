@@ -72,7 +72,7 @@ class NoteWindow:
     def _keep_on_top(self) -> None:
         if self._topmost_var.get():
             self.root.lift()
-        self.root.after(100, self._keep_on_top)
+        self.root.after(1, self._keep_on_top)
 
     def _on_settings_update(self) -> None:
         topmost = self._topmost_var.get()
